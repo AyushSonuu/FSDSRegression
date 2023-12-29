@@ -3,3 +3,4 @@ venv
 .scrapy
 docs/_build
 .ipynb_checkpoints
+logs
