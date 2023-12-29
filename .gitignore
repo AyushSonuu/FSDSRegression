@@ -1,3 +1,5 @@
 venv
-notebooks
 .dockerignore
+.scrapy
+docs/_build
+.ipynb_checkpoints
