@@ -11,6 +11,8 @@ from sklearn.preprocessing import StandardScaler, OrdinalEncoder
 from src.exception import CustomException
 from src.logger import logging
 import os
+from src.utils import save_object
+
 
 @dataclass
 class DataTransformationConfig:
@@ -92,7 +94,22 @@ class DataTransformation:
             input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)
             logging.info("Applying Preprocessing Object on training and testing Dataset")
 
+            train_arr = np.c_[input_feature_train_arr,np.array(target_feature_train_df)]
+            test_arr = np.c_[input_feature_test_arr,np.array(target_feature_test_df)]
 
+            save_object(
+                file_path=self.data_transformation_config.preprocessor_obj_file_path
+                ,obj=preprocessing_obj       
+                        )
+            
+            logging.info('Preprocessor pickle file saved ')
+
+            return(
+                train_arr,
+                test_arr,
+                self.data_transformation_config.preprocessor_obj_file_path,
+            )
         except Exception as e:
             logging.info("Exception occured in the initiate_data_transformation method")
+            raise CustomException(e,sys)
 
