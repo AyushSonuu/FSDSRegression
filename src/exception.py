@@ -23,9 +23,9 @@ class CustomException(Exception):
     
 
 # if __name__=="__main__":
-    # logging.info("logging started")
-    # try:
-    #     a = 1/0
-    # except Exception as e:
-    #     logging.info("error has occureed")
-    #     raise CustomException(e,sys)
+#     logging.info("logging started")
+#     try:
+#         a = 1/0
+#     except Exception as e:
+#         logging.info("error has occureed")
+#         raise CustomException(e,sys)
