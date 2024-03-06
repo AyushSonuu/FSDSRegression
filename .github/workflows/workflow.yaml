@@ -104,7 +104,9 @@ jobs:
       #   id: login-ecr
       #   uses: aws-actions/amazon-ecr-login@v1
       
-      
+      - name: pritt
+       run: |
+        echo "Enter"
       - name: Pull latest images
         run: |
          docker pull ayush0715/diamond:latest
