@@ -5,12 +5,13 @@ from src.logger import logging
 from src.utils import load_obj
 import pandas as pd
 
+
 class PredictPipeline:
 
     def __init_(self):
         pass
 
-    def predict(self,features):
+    def predict(self, features):
         try:
             preprocessor_path = os.path.join('artifacts','preprocessor.pkl')
             model_path = os.path.join('artifacts','model.pkl')
@@ -18,7 +19,7 @@ class PredictPipeline:
             preprocessor = load_obj(preprocessor_path)
             model = load_obj(model_path)
 
-            data_scaled  =preprocessor.transform(features)
+            data_scaled  = preprocessor.transform(features)
 
             pred = model.predict(data_scaled)
 
