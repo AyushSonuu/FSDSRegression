@@ -107,7 +107,7 @@ jobs:
       
       - name: Pull latest images
         run: |
-         docker pull $DOCKERHUB_USERNAME/$REPOSITORY_NAME:$IMAGE_TAG
+         docker pull ayush0715/diamond:latest
          
       # - name: Stop and remove  container if running
       #   run: |
