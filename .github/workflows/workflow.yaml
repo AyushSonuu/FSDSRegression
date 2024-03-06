@@ -105,9 +105,9 @@ jobs:
       #   uses: aws-actions/amazon-ecr-login@v1
       
       
-      - name: Pull latest images
-        run: |
-         docker pull ayush0715/diamond:latest
+      # - name: Pull latest images
+      #   run: |
+      #    docker pull ayush0715/diamond:latest
          
       # - name: Stop and remove  container if running
       #   run: |
@@ -115,7 +115,7 @@ jobs:
        
       - name: Run Docker Image to serve users
         run: |
-         docker run -d -p 8080:8080 --ipc="host" --name=mltest -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}'  $DOCKERHUB_USERNAME/$REPOSITORY_NAME:$IMAGE_TAG
+         docker run -d -p 8080:8080 --ipc="host" --name=ayushtest -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}'  ayush0715/diamond:latest
       - name: Clean previous images and containers
         run: |
          docker system prune -f
