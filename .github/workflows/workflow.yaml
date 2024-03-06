@@ -109,7 +109,7 @@ jobs:
         run: |
          docker pull ayush0715/diamond:latest
          
-      # - name: Stop and remove  container if running
+      # - name: Stop and remove  container if runninggg
       #   run: |
       #    docker ps -q --filter "name=mltest" | grep -q . && docker stop mltest && docker rm -fv mltest
        
